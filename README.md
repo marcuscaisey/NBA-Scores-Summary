@@ -1,5 +1,7 @@
 # NBA Scores Summary
-Script which summarises the NBA games on a given date.
+![](https://i.imgur.com/tuIGEGq.png)
+
+Script which summarises the NBA games on a given date. Each summary contains the teams' records and the top player of the game (player with highest [gamescore](https://www.nbastuffer.com/analytics101/game-score/)).
 
 ## Dependencies
 - Beautiful Soup
