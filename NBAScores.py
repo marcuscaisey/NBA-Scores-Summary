@@ -1,4 +1,6 @@
 import re
+import sys
+import datetime
 
 from bs4 import BeautifulSoup
 import requests
@@ -151,10 +153,22 @@ def summarise_games(date):
     link_tds = soup.find_all('td', class_='gamelink')
     game_urls = [URL + td.a['href'] for td in link_tds]
 
-    print('*' * (SUMMARY_WIDTH + 2))
+    # Title and date
+    print_line('*' * SUMMARY_WIDTH)
+    print_line('')
+    print_line('NBA Scores Summary')
+    print_line(date)
+    print_line('')
+    print_line('*' * SUMMARY_WIDTH)
+
     for url in game_urls:
         game = Game(url)
         summarise_game(game)
 
 
-summarise_games('27/11/2017')
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        date = sys.argv[1]
+    else:
+        date = datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y')
+    summarise_games(date)
