@@ -1,6 +1,6 @@
 import re
 import sys
-import datetime
+from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
 import requests
@@ -170,5 +170,5 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         date = sys.argv[1]
     else:
-        date = datetime.datetime.strftime(datetime.datetime.now(), '%d/%m/%Y')
+        date = datetime.strftime(datetime.now() - timedelta(1), '%d/%m/%Y')
     summarise_games(date)
