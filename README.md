@@ -12,6 +12,6 @@ Use `pip install -r requirements.txt` to install dependencies.
 ## Usage
 At the command line, type:
 ```
-NBAScores optional-date
+python NBAScores.py optional-date
 ```
 where optional-date is in dd/mm/yyyy form. If date not given, summary will be for today's date.
